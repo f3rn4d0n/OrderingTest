@@ -8,5 +8,10 @@
 import Foundation
 
 public struct Business {
-    
+    let id: Int
+    let name: String
+    let slug: String
+    let logo: String
+    let open: Bool
+    let todaySchedule: Schedule?
 }
