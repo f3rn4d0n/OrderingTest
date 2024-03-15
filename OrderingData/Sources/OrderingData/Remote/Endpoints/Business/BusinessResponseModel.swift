@@ -7,11 +7,16 @@
 
 import Foundation
 
-struct BusinessResponseModel: Decodable {    
+struct BusinessResponseModel: Decodable {
+    let error: Bool
+    let result: [BusinessDetailResponseModel]
+}
+
+struct BusinessDetailResponseModel: Decodable {
     let id: Int
     let name: String
     let slug: String
-    let logo: String
+    let logo: String?
     let open: Bool
     let schedule: [ScheduleResponseModel]
 }

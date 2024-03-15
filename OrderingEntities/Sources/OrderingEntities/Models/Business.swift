@@ -9,14 +9,14 @@ import Foundation
 
 public struct Business {
     
-    let id: Int
-    let name: String
-    let slug: String
-    let logo: String
-    let open: Bool
-    let todaySchedule: Schedule?
+    public let id: Int
+    public let name: String
+    public let slug: String
+    public let logo: String?
+    public let open: Bool
+    public let todaySchedule: Schedule?
     
-    public init(id: Int, name: String, slug: String, logo: String, open: Bool, todaySchedule: Schedule? = nil) {
+    public init(id: Int, name: String, slug: String, logo: String?, open: Bool, todaySchedule: Schedule? = nil) {
         self.id = id
         self.name = name
         self.slug = slug

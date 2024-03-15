@@ -9,8 +9,10 @@ import OrderingEntities
 
 extension BusinessResponseModel {
     
-    func mapToBusiness() -> Business {
+    func mapToBusiness() -> [Business] {
         
-        return Business(id: self.id, name: self.name, slug: self.slug, logo: self.logo, open: self.open)
+        return self.result.map{
+            Business(id: $0.id, name: $0.name, slug: $0.slug, logo: $0.logo, open: $0.open)
+        }
     }
 }

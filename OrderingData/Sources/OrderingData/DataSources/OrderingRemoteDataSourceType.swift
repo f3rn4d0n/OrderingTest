@@ -10,5 +10,5 @@ import OrderingEntities
 
 public protocol OrderingRemoteDataSourceType {
     
-    func getBusinesses(completion: @escaping(Result<Business, Error>) -> Void)
+    func getBusinesses(completion: @escaping(Result<[Business], Error>) -> Void)
 }

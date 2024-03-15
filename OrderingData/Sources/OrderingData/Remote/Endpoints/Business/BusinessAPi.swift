@@ -19,7 +19,7 @@ public struct BusinessAPi {
 
 extension BusinessAPi: OrderingRemoteDataSourceType {
     
-    public func getBusinesses(completion: @escaping(Result<Business, Error>) -> Void) {
+    public func getBusinesses(completion: @escaping(Result<[Business], Error>) -> Void) {
         let requestModel = BusinessRequestModel()
         let endpoint = BusinessEndpoints.getBusiness(model: requestModel)
         Task {

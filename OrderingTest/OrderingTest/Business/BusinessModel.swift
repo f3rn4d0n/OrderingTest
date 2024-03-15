@@ -24,7 +24,9 @@ final class BusinessModel: ObservableObject {
             DispatchQueue.main.async { [weak self] in
                 switch result {
                 case .success(let success):
-                    self?.viewModel.businessList = []
+                    self?.viewModel.businessList = success.map {  
+                        BusinessCellViewModel(id: $0.id, image: $0.logo, name: $0.name, schedule: "")
+                    }
                 case .failure(let failure):
                     print("error: \(failure)")
                 }
