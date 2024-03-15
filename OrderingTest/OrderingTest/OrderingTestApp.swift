@@ -11,7 +11,7 @@ import SwiftUI
 struct OrderingTestApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            BusinessFactory.makeBusiness()
         }
     }
 }

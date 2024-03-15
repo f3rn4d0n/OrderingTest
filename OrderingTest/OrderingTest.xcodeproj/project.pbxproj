@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		AC9A269A2BA4D65C00546BBD /* OrderingTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26992BA4D65C00546BBD /* OrderingTestApp.swift */; };
-		AC9A269C2BA4D65C00546BBD /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A269B2BA4D65C00546BBD /* ContentView.swift */; };
 		AC9A269E2BA4D65E00546BBD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9A269D2BA4D65E00546BBD /* Assets.xcassets */; };
 		AC9A26A12BA4D65E00546BBD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC9A26A02BA4D65E00546BBD /* Preview Assets.xcassets */; };
 		AC9A26AB2BA4D65F00546BBD /* OrderingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26AA2BA4D65F00546BBD /* OrderingTestTests.swift */; };
 		AC9A26B52BA4D65F00546BBD /* OrderingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26B42BA4D65F00546BBD /* OrderingTestUITests.swift */; };
 		AC9A26B72BA4D65F00546BBD /* OrderingTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26B62BA4D65F00546BBD /* OrderingTestUITestsLaunchTests.swift */; };
+		AC9A26C52BA4F73600546BBD /* BusinessUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26C42BA4F73600546BBD /* BusinessUIView.swift */; };
+		AC9A26C72BA4F74E00546BBD /* BusinessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26C62BA4F74E00546BBD /* BusinessViewModel.swift */; };
+		AC9A26C92BA4F76900546BBD /* BusinessModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26C82BA4F76900546BBD /* BusinessModel.swift */; };
+		AC9A26CC2BA4F77600546BBD /* OrderingEntities in Frameworks */ = {isa = PBXBuildFile; productRef = AC9A26CB2BA4F77600546BBD /* OrderingEntities */; };
+		AC9A26CE2BA4F77900546BBD /* OrderingData in Frameworks */ = {isa = PBXBuildFile; productRef = AC9A26CD2BA4F77900546BBD /* OrderingData */; };
+		AC9A26D02BA4F77D00546BBD /* OrderingDomain in Frameworks */ = {isa = PBXBuildFile; productRef = AC9A26CF2BA4F77D00546BBD /* OrderingDomain */; };
+		AC9A26D22BA4F81400546BBD /* BusinessFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26D12BA4F81400546BBD /* BusinessFactory.swift */; };
+		AC9A26D42BA4F84900546BBD /* BusinessDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26D32BA4F84900546BBD /* BusinessDependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +43,6 @@
 /* Begin PBXFileReference section */
 		AC9A26962BA4D65C00546BBD /* OrderingTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrderingTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9A26992BA4D65C00546BBD /* OrderingTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingTestApp.swift; sourceTree = "<group>"; };
-		AC9A269B2BA4D65C00546BBD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC9A269D2BA4D65E00546BBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC9A26A02BA4D65E00546BBD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC9A26A62BA4D65F00546BBD /* OrderingTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderingTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +50,11 @@
 		AC9A26B02BA4D65F00546BBD /* OrderingTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrderingTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC9A26B42BA4D65F00546BBD /* OrderingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingTestUITests.swift; sourceTree = "<group>"; };
 		AC9A26B62BA4D65F00546BBD /* OrderingTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderingTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		AC9A26C42BA4F73600546BBD /* BusinessUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessUIView.swift; sourceTree = "<group>"; };
+		AC9A26C62BA4F74E00546BBD /* BusinessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessViewModel.swift; sourceTree = "<group>"; };
+		AC9A26C82BA4F76900546BBD /* BusinessModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessModel.swift; sourceTree = "<group>"; };
+		AC9A26D12BA4F81400546BBD /* BusinessFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessFactory.swift; sourceTree = "<group>"; };
+		AC9A26D32BA4F84900546BBD /* BusinessDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessDependencies.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +62,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC9A26D02BA4F77D00546BBD /* OrderingDomain in Frameworks */,
+				AC9A26CE2BA4F77900546BBD /* OrderingData in Frameworks */,
+				AC9A26CC2BA4F77600546BBD /* OrderingEntities in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +92,7 @@
 				AC9A26A92BA4D65F00546BBD /* OrderingTestTests */,
 				AC9A26B32BA4D65F00546BBD /* OrderingTestUITests */,
 				AC9A26972BA4D65C00546BBD /* Products */,
+				AC9A26CA2BA4F77600546BBD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,8 +109,8 @@
 		AC9A26982BA4D65C00546BBD /* OrderingTest */ = {
 			isa = PBXGroup;
 			children = (
+				AC9A26C32BA4F72700546BBD /* Business */,
 				AC9A26992BA4D65C00546BBD /* OrderingTestApp.swift */,
-				AC9A269B2BA4D65C00546BBD /* ContentView.swift */,
 				AC9A269D2BA4D65E00546BBD /* Assets.xcassets */,
 				AC9A269F2BA4D65E00546BBD /* Preview Content */,
 			);
@@ -127,6 +142,25 @@
 			path = OrderingTestUITests;
 			sourceTree = "<group>";
 		};
+		AC9A26C32BA4F72700546BBD /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				AC9A26C82BA4F76900546BBD /* BusinessModel.swift */,
+				AC9A26C42BA4F73600546BBD /* BusinessUIView.swift */,
+				AC9A26C62BA4F74E00546BBD /* BusinessViewModel.swift */,
+				AC9A26D12BA4F81400546BBD /* BusinessFactory.swift */,
+				AC9A26D32BA4F84900546BBD /* BusinessDependencies.swift */,
+			);
+			path = Business;
+			sourceTree = "<group>";
+		};
+		AC9A26CA2BA4F77600546BBD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +177,11 @@
 			dependencies = (
 			);
 			name = OrderingTest;
+			packageProductDependencies = (
+				AC9A26CB2BA4F77600546BBD /* OrderingEntities */,
+				AC9A26CD2BA4F77900546BBD /* OrderingData */,
+				AC9A26CF2BA4F77D00546BBD /* OrderingDomain */,
+			);
 			productName = OrderingTest;
 			productReference = AC9A26962BA4D65C00546BBD /* OrderingTest.app */;
 			productType = "com.apple.product-type.application";
@@ -257,8 +296,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC9A269C2BA4D65C00546BBD /* ContentView.swift in Sources */,
+				AC9A26C92BA4F76900546BBD /* BusinessModel.swift in Sources */,
 				AC9A269A2BA4D65C00546BBD /* OrderingTestApp.swift in Sources */,
+				AC9A26D42BA4F84900546BBD /* BusinessDependencies.swift in Sources */,
+				AC9A26C72BA4F74E00546BBD /* BusinessViewModel.swift in Sources */,
+				AC9A26D22BA4F81400546BBD /* BusinessFactory.swift in Sources */,
+				AC9A26C52BA4F73600546BBD /* BusinessUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,6 +473,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -459,6 +503,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -588,6 +633,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC9A26CB2BA4F77600546BBD /* OrderingEntities */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrderingEntities;
+		};
+		AC9A26CD2BA4F77900546BBD /* OrderingData */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrderingData;
+		};
+		AC9A26CF2BA4F77D00546BBD /* OrderingDomain */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrderingDomain;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC9A268E2BA4D65C00546BBD /* Project object */;
 }
