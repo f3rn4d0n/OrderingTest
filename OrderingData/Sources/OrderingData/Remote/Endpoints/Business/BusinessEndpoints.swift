@@ -25,7 +25,7 @@ enum BusinessEndpoints: NetworkTargetType {
     
     var queryParams: [URLQueryItem]? {
         return [
-            .init(name: "type", value: 1),
+            .init(name: "type", value: "1"),
             .init(name: "location", value: "40.7539143,-%2073.9810162"),
             .init(name: "params", value: "zones,name,slug,header,logo,schedule"),
         ]

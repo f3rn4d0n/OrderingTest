@@ -19,19 +19,19 @@ public struct BusinessAPi {
 
 extension BusinessAPi: OrderingRemoteDataSourceType {
     
-    func getBusinesses(completion: @escaping(Result<Business, Error>) -> Void) {
+    public func getBusinesses(completion: @escaping(Result<Business, Error>) -> Void) {
         let requestModel = BusinessRequestModel()
         let endpoint = BusinessEndpoints.getBusiness(model: requestModel)
         Task {
             do {
-                let response = BusinessResponseModel = try await service.request(target: endpoint)
+                let response: BusinessResponseModel = try await service.request(target: endpoint)
                 await MainActor.run {
-                    completionHandler(.success(response.mapToBusiness()))
+                    completion(.success(response.mapToBusiness()))
                 }
             }
             catch {
                 await MainActor.run {
-                    completionHandler(.failure(error))
+                    completion(.failure(error))
                 }
             }
         }
