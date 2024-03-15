@@ -7,6 +7,7 @@
 
 import Foundation
 import OrderingEntities
+import OrderingData
 
 public protocol GetBusinessUseCaseType {
     
