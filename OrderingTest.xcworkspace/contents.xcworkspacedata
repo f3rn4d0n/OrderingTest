@@ -5,10 +5,10 @@
       location = "group:OrderingEntities">
    </FileRef>
    <FileRef
-      location = "group:OrderingDomain">
+      location = "group:OrderingData">
    </FileRef>
    <FileRef
-      location = "group:OrderingData">
+      location = "group:OrderingDomain">
    </FileRef>
    <FileRef
       location = "container:OrderingTest/OrderingTest.xcodeproj">
