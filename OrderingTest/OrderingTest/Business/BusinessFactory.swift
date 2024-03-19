@@ -17,7 +17,7 @@ struct BusinessFactory {
         )
         
         let viewModel = BusinessModel(
-            viewModel: .init(businessList: []),
+            viewModel: .init(businessList: [], isLoading: false),
             dependencies: dependencies
         )
 

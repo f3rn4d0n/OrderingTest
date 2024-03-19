@@ -20,9 +20,12 @@ final class BusinessModel: ObservableObject {
         self.dependencies = dependencies
     }
     
+    @MainActor
     func getBusinessList() {
+        viewModel.isLoading = true
         dependencies.getBusinessUseCase.execute { result in
             DispatchQueue.main.async { [weak self] in
+                self?.viewModel.isLoading = false
                 switch result {
                 case .success(let success):
                     self?.viewModel.businessList = success.map {

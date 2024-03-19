@@ -17,5 +17,4 @@ public protocol NetworkTargetType {
     var bodyParams: BodyParams? { get }
     var headers: HTTPHeaders? { get }
     var timeOut: Double { get }
-    var sampleData: Data? { get }
 }

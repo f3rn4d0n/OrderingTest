@@ -40,16 +40,27 @@ public struct RequestNetworkProvider: NetworkServiceType {
     }
 
     public func request<T: Decodable>(target: NetworkTargetType) async throws -> T {
-        let request = try self.makeUrlRequest(with: target)
-        let (data, response) = try await urlSession.data(for: request)
-        try handleResponse(data: data, response: response)
         do {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodedData = try decoder.decode(T.self, from: data)
-            return decodedData
+            let request = try self.makeUrlRequest(with: target)
+            let (data, response) = try await urlSession.data(for: request)
+            try handleResponse(data: data, response: response)
+            do {
+                let decoder = JSONDecoder()
+                decoder.keyDecodingStrategy = .convertFromSnakeCase
+                let decodedData = try decoder.decode(T.self, from: data)
+                return decodedData
+            } catch {
+                throw NetworkError.dataConversionFailure(error: error.localizedDescription)
+            }
         } catch {
-            throw NetworkError.dataConversionFailure(error: error.localizedDescription)
+            switch (error as? URLError)?.code {
+            case .some(.timedOut):
+                throw NetworkError.timeout
+                case .some(.notConnectedToInternet):
+                throw NetworkError.noInternet
+                default:
+                throw error
+            }
         }
     }
 }

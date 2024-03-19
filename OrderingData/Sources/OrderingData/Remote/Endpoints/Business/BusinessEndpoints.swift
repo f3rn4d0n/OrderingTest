@@ -42,8 +42,4 @@ enum BusinessEndpoints: NetworkTargetType {
     var timeOut: Double {
         return 10
     }
-    
-    var sampleData: Data? {
-        return nil
-    }
 }

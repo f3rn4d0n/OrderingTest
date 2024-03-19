@@ -11,6 +11,7 @@ import OrderingDesignSystem
 struct BusinessViewModel {
     var businessList: [BusinessCellViewModel]
     var error: ErrorDetail?
+    var isLoading: Bool
 }
 
 struct BusinessCellViewModel: Identifiable, Hashable {

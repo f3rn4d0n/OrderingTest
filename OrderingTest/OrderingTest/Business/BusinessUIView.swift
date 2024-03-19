@@ -33,17 +33,18 @@ struct BusinessUIView: View {
                 }
                 .overlay {
                     if model.viewModel.businessList.isEmpty {
-                        ContentUnavailable(
-                            title: "Business not found",
-                            systemImage: "eyeglasses",
-                            actionMessage: "Try again") {
-                                model.getBusinessList()
+                        if model.viewModel.isLoading {
+                            ZStack {
+                                Loader(isLoading: $model.viewModel.isLoading)
                             }
-                            .onAppear {
-                                Task {
+                        } else {
+                            ContentUnavailable(
+                                title: "Business not found",
+                                systemImage: "eyeglasses",
+                                actionMessage: "Request data") {
                                     model.getBusinessList()
                                 }
-                            }
+                        }
                     }
                 }
             }

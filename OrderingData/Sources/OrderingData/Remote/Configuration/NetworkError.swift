@@ -12,7 +12,6 @@ public enum NetworkError: Error, LocalizedError {
     case invalidStatus(code: Int)
     case invalidResponse
     case dataConversionFailure(error: String)
-    case missingMockData
     case noInternet
     case timeout
 
@@ -21,13 +20,11 @@ public enum NetworkError: Error, LocalizedError {
         case .invalidURL:
             return "Invalid URL"
         case .invalidStatus:
-            return "Invalid app status"
+            return "Invalid app response status"
         case .invalidResponse:
             return "Invalid data response"
         case .dataConversionFailure:
-            return "Invalid data parsel"
-        case .missingMockData:
-            return "Missing demo data"
+            return "The information seems to be different, please update your application version"
         case .noInternet:
             return "No internet detected, verify your connection"
         case .timeout:
