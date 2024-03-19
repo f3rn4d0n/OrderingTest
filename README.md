@@ -3,7 +3,8 @@
 ## Description 
 iOS Challenge for Ordering 
 
-![AppDemo](Docs/Videos/OrderingTest.MP4)
+https://github.com/f3rn4d0n/OrderingTest/assets/6767646/59f2e5fe-951d-47a8-b4ef-6bafb83179a9
+
 
 ## Setup
 This project was built using Xcode 15.3
@@ -24,18 +25,17 @@ Some important validations need to be included in every project, some of them ar
 - Friendly empty state when we have no information to show
 - Pull to refresh added to reload business information
 
-
-![Perfomrnace](Docs/Images/performance.png)
+![Performance](Docs/Images/performance.png)
 
 ## Dependencies
 Almost all the frameworks are created by myself, but next publish dependencies were included:
 - [CachedAsyncImage](https://github.com/lorenzofiamingo/swiftui-cached-async-image)
 
 ## APP Icon
-The logo for this app was created using [Copilot Designer Microsoft](https://copilot.microsoft.com/images/create) with the next prompt:  `app icon design for a local business store app that assists users in discovering new places to buy food, pictorial mark logo`
+The logo for this app was created using [Copilot Designer Microsoft](https://copilot.microsoft.com/images/create) with the next prompt: `app icon design for a local business store app that assists users in discovering new places to buy food, pictorial mark logo`
 
 ## Limitations and next improves
 - Include unit and ui test
 - Request user location, this step wasn't included because I see the endpoint response doesn't suffer any change if I edit this param
 - Include analytics like firebase
-- iPad Support
+- Improve iPad support
