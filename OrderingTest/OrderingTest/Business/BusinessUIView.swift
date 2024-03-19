@@ -38,6 +38,11 @@ struct BusinessUIView: View {
                         actionMessage: "Try again") {
                             model.getBusinessList()
                         }
+                        .onAppear {
+                            Task {
+                                model.getBusinessList()
+                            }
+                        }
                 }
             }
         }

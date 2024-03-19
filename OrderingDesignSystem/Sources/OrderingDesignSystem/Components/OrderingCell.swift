@@ -28,8 +28,8 @@ public struct OrderingCell: View {
             self.action?()
         }, label: {
             ZStack {
-                if let image = backgroundImage {
-                    OrderingImage(imageURL: image)
+                if let urlString = backgroundImage, let _ = URL(string: urlString) {
+                    OrderingImage(imageURL: urlString)
                 }
                 HStack {
                     VStack {
@@ -39,7 +39,7 @@ public struct OrderingCell: View {
                                 .multilineTextAlignment(.leading)
                                 .font(.title3)
                                 .foregroundColor(.white)
-                                .shadow(color: .black, radius: 1)
+                                .shadow(color: .black, radius: 2)
                             Spacer()
                         }
                         .padding(.bottom)
@@ -49,17 +49,17 @@ public struct OrderingCell: View {
                                 .multilineTextAlignment(.leading)
                                 .font(.callout)
                                 .foregroundColor(.white)
-                                .shadow(color: .black, radius: 1)
+                                .shadow(color: .black, radius: 2)
                             Spacer()
                         }
                     }
                     VStack {
-                        if let image = imageURL {
-                            OrderingImage(imageURL: image)
-                                .frame(height: 80)
-                                .clipShape(.rect(cornerRadius: 40)
-                                )
-                        }
+                        OrderingImage(imageURL: imageURL)
+                            .foregroundStyle(.black)
+                            .background(.white)
+                            .frame(height: 80)
+                            .clipShape(.rect(cornerRadius: 40)
+                        )
                     }
                     .frame(
                         width: 80
@@ -67,11 +67,10 @@ public struct OrderingCell: View {
                     .padding(.leading)
                 }
                 .padding()
-                .background(
-                    backgroundImage != nil ? Color.clear : Color.white
-            )
+                .background(Color.clear)
             }
         })
+        .frame(maxHeight: 140)
         .listRowSeparator(.hidden)
         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
     }
@@ -83,5 +82,23 @@ public struct OrderingCell: View {
         detail: "Today 9:00 - 23:00",
         backgroundImage: "https://s3.amazonaws.com/ordering-images2/res/ordering/image/upload/mxzcovsduk3aowyom3nn/1534196893.jpg",
         imageURL: "https://s3.amazonaws.com/ordering-images2/res/ordering/image/upload/kuuhl9kxuxmqnfld1utc/1534196904.jpg"
+    )
+}
+
+#Preview {
+    OrderingCell(
+        title: "Grilled",
+        detail: "Today 9:00 - 23:00",
+        backgroundImage: "https://s3.amazonaws.com/ordering-images2/res/ordering/image/upload/mxzcovsduk3aowyom3nn/1534196893.jpg",
+        imageURL: "https://res.cloudinary.com/ordering2/image/upload/f_auto,q_auto,h_200,c_limit/v1539095959/crya6ibldlsz4hjyo03e.jpg"
+    )
+}
+
+#Preview {
+    OrderingCell(
+        title: "Grilled",
+        detail: "Today 9:00 - 23:00",
+        backgroundImage: "",
+        imageURL: "https://res.cloudinary.com/ordering2/image/upload/f_auto,q_auto,h_200,c_limit/v1539095959/crya6ibldlsz4hjyo03e.jpg"
     )
 }

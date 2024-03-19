@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CachedAsyncImage
 
 public struct OrderingImage: View {
     
@@ -16,8 +17,8 @@ public struct OrderingImage: View {
     }
     
     public var body: some View {
-        if let urlString = imageURL {
-            AsyncImage(url: URL(string: urlString), scale: 3) { phase in
+        if let urlString = imageURL, let url = URL(string: urlString) {
+            CachedAsyncImage(url: url, urlCache: .imageCache, scale: 3) { phase in
                 switch phase {
                 case .empty:
                     ZStack {
@@ -43,7 +44,7 @@ public struct OrderingImage: View {
     }
     
     private var missingImage: some View {
-        return Image(systemName: "person.crop.circle.badge.questionmark.fill")
+        return Image(systemName: "storefront.fill")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .padding()
@@ -52,4 +53,8 @@ public struct OrderingImage: View {
 
 #Preview {
     OrderingImage(imageURL: "https://s3.amazonaws.com/ordering-images2/res/ordering/image/upload/ak4o8bfgxcpoue0fx1xa/1534196961.jpg")
+}
+
+#Preview {
+    OrderingImage(imageURL: "https://res.cloudinary.com/ordering2/image/upload/f_auto,q_auto,h_200,c_limit/v1539095959/crya6ibldlsz4hjyo03e.jpg")
 }
