@@ -31,7 +31,14 @@ extension BusinessAPi: OrderingRemoteDataSourceType {
             }
             catch {
                 await MainActor.run {
-                    completion(.failure(error))
+                    switch (error as? URLError)?.code {
+                    case .some(.timedOut):
+                        completion(.failure(NetworkError.timeout))
+                    case .some(.notConnectedToInternet):
+                        completion(.failure(NetworkError.noInternet))
+                    default:
+                        completion(.failure(error))
+                    }
                 }
             }
         }

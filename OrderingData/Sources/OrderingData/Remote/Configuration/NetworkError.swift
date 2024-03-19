@@ -13,8 +13,10 @@ public enum NetworkError: Error, LocalizedError {
     case invalidResponse
     case dataConversionFailure(error: String)
     case missingMockData
+    case noInternet
+    case timeout
 
-    var localizedDescription: String {
+    public var localizedDescription: String {
         switch self {
         case .invalidURL:
             return "Invalid URL"
@@ -26,6 +28,12 @@ public enum NetworkError: Error, LocalizedError {
             return "Invalid data parsel"
         case .missingMockData:
             return "Missing demo data"
+        case .noInternet:
+            return "No internet detected, verify your connection"
+        case .timeout:
+            return "Your request exceeded the waiting time, please check your internet connection"
         }
     }
+    
+    public var errorDescription: String? { return localizedDescription }
 }

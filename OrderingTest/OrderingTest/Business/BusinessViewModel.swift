@@ -6,9 +6,11 @@
 //
 
 import Foundation
+import OrderingDesignSystem
 
 struct BusinessViewModel {
     var businessList: [BusinessCellViewModel]
+    var error: ErrorDetail?
 }
 
 struct BusinessCellViewModel: Identifiable, Hashable {

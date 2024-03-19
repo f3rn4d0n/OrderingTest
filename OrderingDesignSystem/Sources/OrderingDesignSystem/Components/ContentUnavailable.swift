@@ -26,13 +26,12 @@ public struct ContentUnavailable: View {
             ContentUnavailableView {
                 Label(title, systemImage: systemImage)
             } description: {
-                Button {
+                OrderingButton(message: actionMessage) {
                     Task {
                         await self.action?()
                     }
-                } label: {
-                    Text(actionMessage)
                 }
+                .padding()
             }
         } else {
             VStack {
@@ -40,12 +39,10 @@ public struct ContentUnavailable: View {
                     .padding()
                 Text(title)
                     .padding()
-                Button {
+                OrderingButton(message: actionMessage) {
                     Task {
                         await self.action?()
                     }
-                } label: {
-                    Text(actionMessage)
                 }
             }
         }
