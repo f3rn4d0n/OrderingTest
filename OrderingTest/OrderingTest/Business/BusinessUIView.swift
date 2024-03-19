@@ -28,6 +28,8 @@ struct BusinessUIView: View {
                         )
                     }
                 }
+                .listStyle(.plain)
+                .background(Color.clear)
                 .refreshable {
                     model.getBusinessList()
                 }

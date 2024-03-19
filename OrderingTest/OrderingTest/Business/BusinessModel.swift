@@ -22,6 +22,7 @@ final class BusinessModel: ObservableObject {
     
     @MainActor
     func getBusinessList() {
+        viewModel.businessList = []
         viewModel.isLoading = true
         dependencies.getBusinessUseCase.execute { result in
             DispatchQueue.main.async { [weak self] in
