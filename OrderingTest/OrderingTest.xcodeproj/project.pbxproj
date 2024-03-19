@@ -21,6 +21,7 @@
 		AC9A26D02BA4F77D00546BBD /* OrderingDomain in Frameworks */ = {isa = PBXBuildFile; productRef = AC9A26CF2BA4F77D00546BBD /* OrderingDomain */; };
 		AC9A26D22BA4F81400546BBD /* BusinessFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26D12BA4F81400546BBD /* BusinessFactory.swift */; };
 		AC9A26D42BA4F84900546BBD /* BusinessDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC9A26D32BA4F84900546BBD /* BusinessDependencies.swift */; };
+		AC9A26D72BA90F1600546BBD /* OrderingDesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = AC9A26D62BA90F1600546BBD /* OrderingDesignSystem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC9A26D02BA4F77D00546BBD /* OrderingDomain in Frameworks */,
+				AC9A26D72BA90F1600546BBD /* OrderingDesignSystem in Frameworks */,
 				AC9A26CE2BA4F77900546BBD /* OrderingData in Frameworks */,
 				AC9A26CC2BA4F77600546BBD /* OrderingEntities in Frameworks */,
 			);
@@ -181,6 +183,7 @@
 				AC9A26CB2BA4F77600546BBD /* OrderingEntities */,
 				AC9A26CD2BA4F77900546BBD /* OrderingData */,
 				AC9A26CF2BA4F77D00546BBD /* OrderingDomain */,
+				AC9A26D62BA90F1600546BBD /* OrderingDesignSystem */,
 			);
 			productName = OrderingTest;
 			productReference = AC9A26962BA4D65C00546BBD /* OrderingTest.app */;
@@ -646,6 +649,10 @@
 		AC9A26CF2BA4F77D00546BBD /* OrderingDomain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = OrderingDomain;
+		};
+		AC9A26D62BA90F1600546BBD /* OrderingDesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = OrderingDesignSystem;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -25,12 +25,45 @@ final class BusinessModel: ObservableObject {
                 switch result {
                 case .success(let success):
                     self?.viewModel.businessList = success.map {  
-                        BusinessCellViewModel(id: $0.id, image: $0.logo, name: $0.name, schedule: "")
+                        BusinessCellViewModel(id: $0.id, logo: $0.logo, background: $0.header, name: $0.name, schedule: $0.schedule)
                     }
                 case .failure(let failure):
                     print("error: \(failure)")
                 }
             }
+        }
+    }
+}
+
+extension Business {
+    
+    var schedule: String {
+        if let lapse = todaySchedule.lapses.first {
+            return lapse.period
+        }
+        return "Priod missing"
+    }
+}
+
+extension Lapses {
+    
+    var period: String {
+        return "Today from \(open.time) to \(close.time)"
+    }
+}
+
+extension LapsesTime {
+    var time: String {
+        return "\(hour.asTime()):\(minute.asTime())"
+    }
+}
+
+extension Int {
+    func asTime() -> String {
+        if self > 9 {
+            return "\(self)"
+        } else {
+            return "0\(self)"
         }
     }
 }

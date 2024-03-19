@@ -53,23 +53,3 @@ public struct RequestNetworkProvider: NetworkServiceType {
         }
     }
 }
-
-public struct MockNetworkProvider: NetworkServiceType {
-
-    public init () { }
-
-    public func request<T>(target: NetworkTargetType) async throws -> T where T: Decodable {
-
-        guard let sampleData = target.sampleData else {
-            throw NetworkError.missingMockData
-        }
-        do {
-            let decoder = JSONDecoder()
-            decoder.keyDecodingStrategy = .convertFromSnakeCase
-            let decodedData = try decoder.decode(T.self, from: sampleData)
-            return decodedData
-        } catch {
-            throw NetworkError.dataConversionFailure(error: error.localizedDescription)
-        }
-    }
-}

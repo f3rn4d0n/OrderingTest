@@ -16,9 +16,11 @@ struct BusinessDetailResponseModel: Decodable {
     let id: Int
     let name: String
     let slug: String
+    let header: String?
     let logo: String?
     let open: Bool
     let schedule: [ScheduleResponseModel]
+    let today: ScheduleResponseModel
 }
 
 struct ScheduleResponseModel: Decodable {

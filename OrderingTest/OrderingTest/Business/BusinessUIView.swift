@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OrderingDesignSystem
 
 struct BusinessUIView: View {
     
@@ -14,9 +15,16 @@ struct BusinessUIView: View {
     var body: some View {
         VStack {
             Text("Business list")
+                .font(.title)
+                .padding()
             List {
                 ForEach(model.viewModel.businessList) { business in
-                    Text(business.name)
+                    OrderingCell(
+                        title: business.name,
+                        detail: business.schedule,
+                        backgroundImage: business.background,
+                        imageURL: business.logo
+                    )
                 }
             }
             .refreshable {
@@ -24,29 +32,12 @@ struct BusinessUIView: View {
             }
             .overlay {
                 if model.viewModel.businessList.isEmpty {
-                    if #available(iOS 17.0, *) {
-                        ContentUnavailableView {
-                            Label("title", systemImage: "")
-                        } description: {
-                            Button {
-                                model.getBusinessList()
-                            } label: {
-                                Text("description")
-                            }
+                    ContentUnavailable(
+                        title: "Business not found",
+                        systemImage: "eyeglasses",
+                        actionMessage: "Try again") {
+                            model.getBusinessList()
                         }
-                    } else {
-                        VStack {
-                            Text("")
-                                .padding()
-                            Text("")
-                                .padding()
-                            Button {
-                                model.getBusinessList()
-                            } label: {
-                                Text("description")
-                            }
-                        }
-                    }
                 }
             }
         }

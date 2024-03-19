@@ -13,7 +13,8 @@ struct BusinessViewModel {
 
 struct BusinessCellViewModel: Identifiable, Hashable {
     let id: Int
-    let image: String?
+    let logo: String?
+    let background: String?
     let name: String
     let schedule: String
 }

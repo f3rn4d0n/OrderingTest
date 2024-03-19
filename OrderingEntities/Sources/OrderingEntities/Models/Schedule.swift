@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Schedule {
-    let enabled: Bool
-    let lapses : [Lapses]
+    public let enabled: Bool
+    public let lapses : [Lapses]
     
     public init(enabled: Bool, lapses: [Lapses]) {
         self.enabled = enabled
@@ -19,8 +19,8 @@ public struct Schedule {
 
 public struct Lapses {
     
-    let open: LapsesTime
-    let close: LapsesTime
+    public let open: LapsesTime
+    public let close: LapsesTime
     
     public init(open: LapsesTime, close: LapsesTime) {
         self.open = open
@@ -30,8 +30,8 @@ public struct Lapses {
 
 public struct LapsesTime {
     
-    let hour: Int
-    let minute: Int
+    public let hour: Int
+    public let minute: Int
     
     public init(hour: Int, minute: Int) {
         self.hour = hour
