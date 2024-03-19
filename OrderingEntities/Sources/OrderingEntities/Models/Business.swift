@@ -27,3 +27,13 @@ public struct Business {
         self.todaySchedule = todaySchedule
     }
 }
+
+public extension Business {
+    
+    var schedule: String {
+        if let lapse = todaySchedule.lapses.first {
+            return lapse.period
+        }
+        return "Priod missing"
+    }
+}

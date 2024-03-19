@@ -34,36 +34,3 @@ final class BusinessModel: ObservableObject {
         }
     }
 }
-
-extension Business {
-    
-    var schedule: String {
-        if let lapse = todaySchedule.lapses.first {
-            return lapse.period
-        }
-        return "Priod missing"
-    }
-}
-
-extension Lapses {
-    
-    var period: String {
-        return "Today from \(open.time) to \(close.time)"
-    }
-}
-
-extension LapsesTime {
-    var time: String {
-        return "\(hour.asTime()):\(minute.asTime())"
-    }
-}
-
-extension Int {
-    func asTime() -> String {
-        if self > 9 {
-            return "\(self)"
-        } else {
-            return "0\(self)"
-        }
-    }
-}

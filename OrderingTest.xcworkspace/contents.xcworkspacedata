@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:OrderingUtilities">
+   </FileRef>
+   <FileRef
       location = "group:OrderingDesignSystem">
    </FileRef>
    <FileRef

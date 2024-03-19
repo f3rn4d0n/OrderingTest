@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import OrderingUtilities
 
 public struct Schedule {
     public let enabled: Bool
@@ -28,6 +29,13 @@ public struct Lapses {
     }
 }
 
+extension Lapses {
+    
+    var period: String {
+        return "Today from \(open.time) to \(close.time)"
+    }
+}
+
 public struct LapsesTime {
     
     public let hour: Int
@@ -36,5 +44,11 @@ public struct LapsesTime {
     public init(hour: Int, minute: Int) {
         self.hour = hour
         self.minute = minute
+    }
+}
+
+extension LapsesTime {
+    var time: String {
+        return "\(hour.asTime()):\(minute.asTime())"
     }
 }
